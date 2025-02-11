@@ -114,6 +114,17 @@ dependencies {
     // World Country flag
     implementation 'com.github.blongho:world-country-data:v1.1.0'
 }
+plugins {
+  id("org.sonarqube") version "6.0.1.5171"
+}
+
+sonar {
+  properties {
+    property("sonar.projectKey", "HXL916_Travel-Mate")
+    property("sonar.organization", "hxl916")
+    property("sonar.host.url", "https://sonarcloud.io")
+  }
+}
 
 preBuild.dependsOn('checkstyle')
 assemble.dependsOn('lint')
